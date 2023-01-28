@@ -1,4 +1,6 @@
 import React from 'react';
+import Input from './Input';
+import Messages from './Messages';
 
 const Chat = () => {
   return (
@@ -6,6 +8,8 @@ const Chat = () => {
       <div className="chat-info">
         <span>Tyler</span>
       </div>
+      <Messages />
+      <Input />
     </div>
   );
 };
