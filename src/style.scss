@@ -1,3 +1,9 @@
+@mixin mobile {
+  @media screen and (max-width: 846px) {
+    @content;
+  }
+}
+
 .form-container {
   background-image: url('./assets/background.png');
   background-repeat: no-repeat;
@@ -89,11 +95,15 @@
     height: 80%;
     display: flex;
     overflow: hidden;
+    @include mobile {
+      width: 100%;
+    }
 
     .sidebar {
       flex: 1;
       border-right: 1px solid green;
       background: #a4bcffe8;
+      position: relative;
 
       .navbar {
         display: flex;
@@ -123,6 +133,13 @@
           cursor: pointer;
           border: none;
           border-radius: 10px;
+          @include mobile {
+            position: absolute;
+            border-radius: 0px;
+            bottom: 0px;
+            right: 0px;
+            left: 0px;
+          }
         }
       }
       .search {
