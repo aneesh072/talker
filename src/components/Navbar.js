@@ -1,5 +1,7 @@
 import React from 'react';
 import Pug from '../assets/pug.jpg';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const Navbar = () => {
   return (
@@ -8,7 +10,7 @@ const Navbar = () => {
         <img src={Pug} alt="" />
         <span>Enis</span>
       </div>
-      <button>Logout</button>
+      <button onClick={()=>signOut(auth)}>Logout</button>
     </div>
   );
 };
